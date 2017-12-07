@@ -1,7 +1,7 @@
 import {Component, NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {CommonModule} from "@angular/common";
-import {OAuthModule} from "./OAuthModule";
+import {NgOAuthModule} from "./NgOAuthModule";
 
 
 @Component({
@@ -22,7 +22,7 @@ export class AppComponent {
     imports     : [
         BrowserModule,
         CommonModule,
-        OAuthModule
+        NgOAuthModule
     ],
     exports     : [AppComponent],
     providers   : [],

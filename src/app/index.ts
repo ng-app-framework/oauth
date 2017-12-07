@@ -1,5 +1,5 @@
 // Put all exports here!
-export * from "./OAuthModule";
+export * from "./NgOAuthModule";
 export * from "./Service/OAuthEvents";
 export * from "./Service/OAuthConfig";
 export * from "./Service/OAuthEndpointCaller";

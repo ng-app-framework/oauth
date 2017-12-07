@@ -4,16 +4,18 @@ import {OAuthToken} from "./Service/OAuthToken";
 import {OAuthEndpointCaller} from "./Service/OAuthEndpointCaller";
 import {RefreshTokenEndpoint} from "./Endpoint/RefreshTokenEndpoint";
 import {OAuthRefresher} from "./Service/OAuthRefresher";
-import {ApiModule} from "@ng-app-framework/api";
-import {ValidationModule} from "@ng-app-framework/validation";
-import {StorageModule} from "@ng-app-framework/storage";
+import {NgApiModule} from "@ng-app-framework/api";
+import {NgValidationModule} from "@ng-app-framework/validation";
+import {NgStorageModule} from "@ng-app-framework/storage";
+import {NgCoreModule} from "@ng-app-framework/core";
 
 
 @NgModule({
     imports  : [
-        ApiModule,
-        StorageModule,
-        ValidationModule
+        NgCoreModule,
+        NgApiModule,
+        NgStorageModule,
+        NgValidationModule
     ],
     providers: [
         OAuthConfig,
@@ -23,14 +25,14 @@ import {StorageModule} from "@ng-app-framework/storage";
         OAuthToken
     ]
 })
-export class OAuthModule {
+export class NgOAuthModule {
 
     constructor(oauth: OAuthToken) {
     }
 
     static forRoot(clientId: string, clientSecret: string): ModuleWithProviders {
         return {
-            ngModule : OAuthModule,
+            ngModule : NgOAuthModule,
             providers: [{
                 provide : OAuthConfig,
                 useValue: {
