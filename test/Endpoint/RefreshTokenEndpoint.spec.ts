@@ -6,7 +6,7 @@ describe('Refresh Token Endpoint', () => {
         let endpoint: RefreshTokenEndpoint;
         let endpointCallerMock = new EndpointCallerMock();
         beforeEach(() => {
-            endpoint = new RefreshTokenEndpoint(endpointCallerMock);
+            endpoint = new RefreshTokenEndpoint(<any>endpointCallerMock);
         });
 
         describe('Refresh', () => {

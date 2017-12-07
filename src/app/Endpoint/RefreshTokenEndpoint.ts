@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs/Rx";
 import {AsynchronousDefinition, Name, ObjectValidator, StringValidator} from "@ng-app-framework/validation";
-import {Callable, Endpoint, EndpointValidator} from "@ng-app-framework/api";
+import {Endpoint, EndpointCaller, EndpointValidator} from "@ng-app-framework/api";
 
 @Name('RefreshTokenEndpoint')
 @Injectable()
@@ -20,7 +20,7 @@ export class RefreshTokenEndpoint extends Endpoint {
         }))
     );
 
-    constructor(public endpointCaller: Callable) {
+    constructor(public endpointCaller: EndpointCaller) {
         super(endpointCaller);
     }
 

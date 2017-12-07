@@ -3,7 +3,7 @@ import {Observable} from "rxjs/Rx";
 import {OAuthRefresher} from "./OAuthRefresher";
 import {OAuthToken} from "./OAuthToken";
 import {Value} from "@ng-app-framework/core";
-import {EndpointCaller, EndpointConfig, Requestable} from "@ng-app-framework/api";
+import {EndpointCaller, EndpointConfig, HttpProxy} from "@ng-app-framework/api";
 import {HttpErrorResponse} from "@angular/common/http";
 
 @Injectable()
@@ -11,7 +11,7 @@ export class OAuthEndpointCaller extends EndpointCaller {
 
     static EXPIRED_TOKEN = 'The access token provided has expired.';
 
-    constructor(public http: Requestable,
+    constructor(public http: HttpProxy,
                 public oauth: OAuthToken,
                 public refresher: OAuthRefresher,
                 public config: EndpointConfig) {
