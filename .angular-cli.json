@@ -1,0 +1,62 @@
+{
+  "apps": [
+    {
+      "root": "./",
+      "outDir": "dist",
+      "assets": [
+        {
+          "glob": "**/*",
+          "input": "public",
+          "output": "./"
+        }
+      ],
+      "index": "index.html",
+      "main": "src/main.ts",
+      "test": "./test.ts",
+      "tsconfig": "./tsconfig.json",
+      "testTsconfig": "./tsconfig.json",
+      "prefix": "app",
+      "mobile": false,
+      "styles": [
+      ],
+      "scripts": [
+      ],
+      "environmentSource": "src/environment.ts",
+      "environments": {
+        "test": "src/environment.ts",
+        "dev": "src/environment.dev.ts",
+        "staging": "src/environment.ts",
+        "prod": "src/environment.ts"
+      }
+    }
+  ],
+  "addons": [],
+  "packages": [],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    },
+    "codeCoverage": {
+      "exclude": [
+        "**/*Mocker.ts",
+        "**/Mock/*.ts"
+      ]
+    }
+  },
+  "defaults": {
+    "styleExt": "scss",
+    "prefixInterfaces": true,
+    "inline": {
+      "style": false,
+      "template": false
+    },
+    "spec": {
+      "class": true,
+      "component": true,
+      "directive": true,
+      "module": false,
+      "pipe": true,
+      "service": true
+    }
+  }
+}
