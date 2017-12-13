@@ -22,9 +22,9 @@
     "@angular/common": "^5.1.0",
     "@angular/core": "^5.1.0",
     "@ng-app-framework/api": "^1.1.0",
-    "@ng-app-framework/core": "^1.1.0",
-    "@ng-app-framework/storage": "^1.1.0",
-    "@ng-app-framework/validation": "^1.1.0",
+    "@ng-app-framework/core": "^1.1.1",
+    "@ng-app-framework/storage": "^1.1.1",
+    "@ng-app-framework/validation": "^1.1.1",
     "rxjs": "^5.5.5"
   },
   "devDependencies": {
@@ -53,7 +53,6 @@
     "karma-spec-reporter": "0.0.26",
     "ng-packagr": "^1.6.0",
     "node-sass": "^4.3.0",
-    "reflect-metadata": "https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.10.tgz",
     "ts-node": "^1.2.1",
     "tslint": "^5.8.0",
     "typescript": "^2.6.2",

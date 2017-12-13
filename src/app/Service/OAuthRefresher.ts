@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {RefreshTokenEndpoint} from "../Endpoint/RefreshTokenEndpoint";
 import {OAuthToken} from "./OAuthToken";
-import {Observable} from "rxjs/Observable";
+import {Observable} from "rxjs/Rx";
 import {Subject} from "rxjs/Rx";
 import {StringValue} from "@ng-app-framework/core";
 
