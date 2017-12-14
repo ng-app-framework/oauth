@@ -1,3 +1,4 @@
+import {OAuthConfig} from "../../src/app";
 import {RefreshTokenEndpoint} from "../../src/app/Endpoint/RefreshTokenEndpoint";
 import {EndpointCallerMock} from "@ng-app-framework/api";
 
@@ -6,7 +7,7 @@ describe('Refresh Token Endpoint', () => {
         let endpoint: RefreshTokenEndpoint;
         let endpointCallerMock = new EndpointCallerMock();
         beforeEach(() => {
-            endpoint = new RefreshTokenEndpoint(<any>endpointCallerMock);
+            endpoint = new RefreshTokenEndpoint(<any>endpointCallerMock, new OAuthConfig());
         });
 
         describe('Refresh', () => {
