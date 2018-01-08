@@ -18,10 +18,10 @@
     "dependencies": {
         "@angular/common": "^5.1.3",
         "@angular/core": "^5.1.3",
-        "@ng-app-framework/api": "^1.1.10",
-        "@ng-app-framework/core": "^1.1.11",
-        "@ng-app-framework/storage": "^1.1.11",
-        "@ng-app-framework/validation": "^1.1.10",
+        "@ng-app-framework/api": "^1.1.12",
+        "@ng-app-framework/core": "^1.1.14",
+        "@ng-app-framework/storage": "^1.1.13",
+        "@ng-app-framework/validation": "^1.1.15",
         "rxjs": "^5.5.6"
     },
     "peerDependencies": {
@@ -66,7 +66,14 @@
     "$schema": "./node_modules/ng-packagr/package.schema.json",
     "ngPackage": {
         "lib": {
-            "entryFile": "index.ts"
+            "entryFile": "index.ts",
+            "name": "ng-app-oauth",
+            "externals": {
+                "@ng-app-framework/core": "ng-app-core",
+                "@ng-app-framework/api": "ng-app-api",
+                "@ng-app-framework/storage": "ng-app-storage",
+                "@ng-app-framework/validation": "ng-app-validation"
+            }
         }
     }
 }
