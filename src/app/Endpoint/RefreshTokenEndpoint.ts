@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {Observable} from "rxjs/Rx";
 import {AsynchronousDefinition, Name, ObjectValidator, StringValidator} from "@ng-app-framework/validation";
 import {Endpoint, EndpointCaller, EndpointValidator} from "@ng-app-framework/api";
-import {OAuthConfig} from "../";
+import {OAuthConfig} from "../Service/OAuthConfig";
 
 @Name('RefreshTokenEndpoint')
 @Injectable()
