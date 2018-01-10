@@ -1,6 +1,6 @@
-import {OAuthConfig} from "../../src/lib";
 import {RefreshTokenEndpoint} from "../../src/lib/Endpoint/RefreshTokenEndpoint";
-import {EndpointCallerMock} from "@ng-app-framework/api";
+import {EndpointCallerMock}   from "@ng-app-framework/api";
+import {OAuthConfig}          from "../../src/lib/Service/OAuthConfig";
 
 describe('Refresh Token Endpoint', () => {
     describe('After Instantiation', () => {

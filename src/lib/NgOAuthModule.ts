@@ -1,13 +1,13 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
-import {OAuthConfig} from "./Service/OAuthConfig";
-import {OAuthToken} from "./Service/OAuthToken";
-import {OAuthEndpointCaller} from "./Service/OAuthEndpointCaller";
-import {RefreshTokenEndpoint} from "./Endpoint/RefreshTokenEndpoint";
-import {OAuthRefresher} from "./Service/OAuthRefresher";
-import {NgApiModule, EndpointCaller} from "@ng-app-framework/api";
-import {NgValidationModule} from "@ng-app-framework/validation";
-import {NgStorageModule} from "@ng-app-framework/storage";
-import {NgCoreModule} from "@ng-app-framework/core";
+import {NgApiModule, EndpointCaller}                from "@ng-app-framework/api";
+import {OAuthConfig}                   from "./Service/OAuthConfig";
+import {OAuthToken}                    from "./Service/OAuthToken";
+import {OAuthEndpointCaller}           from "./Service/OAuthEndpointCaller";
+import {RefreshTokenEndpoint}          from "./Endpoint/RefreshTokenEndpoint";
+import {OAuthRefresher}                from "./Service/OAuthRefresher";
+import {NgValidationModule}            from "@ng-app-framework/validation";
+import {NgStorageModule}               from "@ng-app-framework/storage";
+import {NgCoreModule}                  from "@ng-app-framework/core";
 
 
 @NgModule({
@@ -22,11 +22,7 @@ import {NgCoreModule} from "@ng-app-framework/core";
         OAuthRefresher,
         RefreshTokenEndpoint,
         OAuthEndpointCaller,
-        OAuthToken,
-        {
-            provide: EndpointCaller,
-            useExisting: OAuthEndpointCaller
-        }
+        OAuthToken
     ]
 })
 export class NgOAuthModule {

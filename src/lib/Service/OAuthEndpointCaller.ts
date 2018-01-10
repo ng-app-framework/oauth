@@ -1,18 +1,20 @@
-import {Injectable} from "@angular/core";
-import {Observable} from "rxjs/Rx";
-import {OAuthRefresher} from "./OAuthRefresher";
-import {OAuthToken} from "./OAuthToken";
-import {Value} from "@ng-app-framework/core";
+import {Injectable, Inject, forwardRef}            from "@angular/core";
+import {Observable}                                from "rxjs/Rx";
+import {OAuthRefresher}                            from "./OAuthRefresher";
+import {OAuthToken}                                from "./OAuthToken";
+import {Value}                                     from "@ng-app-framework/core";
 import {EndpointCaller, EndpointConfig, HttpProxy} from "@ng-app-framework/api";
-import {HttpErrorResponse} from "@angular/common/http";
+import {HttpErrorResponse}                         from "@angular/common/http";
 
 @Injectable()
 export class OAuthEndpointCaller extends EndpointCaller {
 
-    constructor(public http: HttpProxy,
-                public oauth: OAuthToken,
-                public refresher: OAuthRefresher,
-                public config: EndpointConfig) {
+    constructor(
+        public http: HttpProxy,
+        public oauth: OAuthToken,
+        public refresher: OAuthRefresher,
+        public config: EndpointConfig
+    ) {
         super(http, config);
     }
 
@@ -24,9 +26,9 @@ export class OAuthEndpointCaller extends EndpointCaller {
                 method,
                 requestData
             )
-                .catch(
-                    (error, caught) => this.catchErrors(error, absoluteUrl, method, requestData)
-                )
+                 .catch(
+                     (error, caught) => this.catchErrors(error, absoluteUrl, method, requestData)
+                 )
         );
     }
 
@@ -55,10 +57,10 @@ export class OAuthEndpointCaller extends EndpointCaller {
 
     protected refreshAccessTokenAndRetry(absoluteUrl, method: string, requestData: any) {
         return this.refresher.refresh().catch((err, caught) => this.handleUnauthorized())
-            .flatMap(response => {
-                requestData.access_token = this.oauth.state.accessToken;
-                return super.call(absoluteUrl, method, requestData);
-            });
+                   .flatMap(response => {
+                       requestData.access_token = this.oauth.state.accessToken;
+                       return super.call(absoluteUrl, method, requestData);
+                   });
     }
 
     protected getUrlWithAccessToken(method: string, absoluteUrl: string) {

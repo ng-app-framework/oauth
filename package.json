@@ -18,7 +18,7 @@
     "dependencies": {
         "@angular/common": "^5.2.0",
         "@angular/core": "^5.2.0",
-        "@ng-app-framework/api": "^1.1.19",
+        "@ng-app-framework/api": "^1.1.23",
         "@ng-app-framework/core": "^1.1.18",
         "@ng-app-framework/storage": "^1.1.17",
         "@ng-app-framework/validation": "^1.1.22",
