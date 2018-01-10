@@ -1,7 +1,7 @@
 import {Component, NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {CommonModule} from "@angular/common";
-import {NgOAuthModule} from "./NgOAuthModule";
+import {NgOAuthModule} from "../lib/NgOAuthModule";
 
 
 @Component({

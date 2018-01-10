@@ -9,8 +9,6 @@ import {HttpErrorResponse} from "@angular/common/http";
 @Injectable()
 export class OAuthEndpointCaller extends EndpointCaller {
 
-    static EXPIRED_TOKEN = 'The access token provided has expired.';
-
     constructor(public http: HttpProxy,
                 public oauth: OAuthToken,
                 public refresher: OAuthRefresher,
@@ -33,7 +31,7 @@ export class OAuthEndpointCaller extends EndpointCaller {
     }
 
     protected catchErrors(error: HttpErrorResponse, absoluteUrl, method, requestData) {
-        if (this.isUnauthorized(error) && error.error.error_description === OAuthEndpointCaller.EXPIRED_TOKEN) {
+        if (this.isUnauthorized(error)) {
             return this.refreshAccessTokenAndRetry(absoluteUrl, method, requestData);
         }
         if (this.isUnauthorized(error)) {
