@@ -1,8 +1,8 @@
-import {OAuthRefresher} from "../../src/app/Service/OAuthRefresher";
+import {OAuthRefresher} from "../../src/lib/Service/OAuthRefresher";
 import {RefreshTokenEndpointMock} from "../Mock/RefreshTokenEndpointMock";
 import {Observable} from "rxjs/Rx";
 import {UnsubscribeAll} from "@ng-app-framework/core";
-import {OAuthEvents} from "../../src/app/Service/OAuthEvents";
+import {OAuthEvents} from "../../src/lib/Service/OAuthEvents";
 
 describe('OAuthRefresher', () => {
 

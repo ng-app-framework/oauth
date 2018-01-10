@@ -1,4 +1,4 @@
-import {OAuthEndpointCaller} from "../../src/app/Service/OAuthEndpointCaller";
+import {OAuthEndpointCaller} from "../../src/lib/Service/OAuthEndpointCaller";
 import {Observable} from "rxjs/Rx";
 import {HttpSpy, MockedResponse} from "@ng-app-framework/api";
 import {EventEmitter} from "@angular/core";

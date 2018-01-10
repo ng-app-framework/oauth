@@ -1,4 +1,4 @@
-import {OAuthState} from "../../src/app/Service/OAuthState";
+import {OAuthState} from "../../src/lib/Service/OAuthState";
 
 describe('OAuthState', () => {
 

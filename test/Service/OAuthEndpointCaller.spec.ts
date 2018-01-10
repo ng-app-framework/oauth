@@ -1,4 +1,4 @@
-import {OAuthEndpointCaller} from "../../src/app/Service/OAuthEndpointCaller";
+import {OAuthEndpointCaller} from "../../src/lib/Service/OAuthEndpointCaller";
 import {Observable} from "rxjs/Rx";
 import {OAuthEndpointCallerShunt} from "../Mock/OAuthEndpointCallerShunt";
 import {UnsubscribeAll, Value} from "@ng-app-framework/core";
@@ -130,7 +130,7 @@ describe('OAuthEndpointCaller', () => {
                 assertLogoutCalled(done);
             });
             it('should logout when the refresh endpoint errors', (done) => {
-                endpoint.mockResponse      = getMockResponse(401, OAuthEndpointCaller.EXPIRED_TOKEN);
+                endpoint.mockResponse      = getMockResponse(401, 'didn\'t work');
                 endpoint.refresher.refresh = () => {
                     return Observable.throw('Erred!');
                 };
@@ -143,7 +143,7 @@ describe('OAuthEndpointCaller', () => {
                 assertCallErred(done);
             });
             it('should refresh the access token if a 401 for expired access token is encountered', (done) => {
-                endpoint.mockResponse = getMockResponse(401, OAuthEndpointCaller.EXPIRED_TOKEN);
+                endpoint.mockResponse = getMockResponse(401, 'didn\'t work');
                 assertRefreshGetsCalledAndIsSuccessful(done);
             });
         });

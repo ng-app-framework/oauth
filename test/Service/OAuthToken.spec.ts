@@ -1,6 +1,6 @@
-import {OAuthToken} from "../../src/app/Service/OAuthToken";
+import {OAuthToken} from "../../src/lib/Service/OAuthToken";
 import {StringValue, Value} from "@ng-app-framework/core";
-import {OAuthConfig} from "../../src/app/Service/OAuthConfig";
+import {OAuthConfig} from "../../src/lib/Service/OAuthConfig";
 
 describe('OAuthToken', () => {
 
