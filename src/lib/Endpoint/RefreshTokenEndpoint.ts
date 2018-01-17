@@ -27,7 +27,7 @@ export class RefreshTokenEndpoint extends Endpoint {
 
     public refresh(refreshToken: string): Observable<any> {
         return this.request('get', {
-            client_id: 'id_' + this.config.clientId,
+            client_id: this.config.clientId,
             client_secret: this.config.clientSecret,
             grant_type: 'refresh_token',
             refresh_token: refreshToken
