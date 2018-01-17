@@ -1,8 +1,8 @@
-import {Injectable}                                                     from "@angular/core";
-import {Observable}                                                     from "rxjs/Rx";
+import {Injectable} from "@angular/core";
+import {Observable} from "rxjs/Rx";
 import {AsynchronousDefinition, Name, ObjectValidator, StringValidator} from "@ng-app-framework/validation";
-import {Endpoint, EndpointCaller, EndpointValidator}                    from "@ng-app-framework/api";
-import {OAuthConfig}                                                    from "../Service/OAuthConfig";
+import {Endpoint, EndpointCaller, EndpointValidator} from "@ng-app-framework/api";
+import {OAuthConfig} from "../Service/OAuthConfig";
 
 @Name('RefreshTokenEndpoint')
 @Injectable()
@@ -26,11 +26,10 @@ export class RefreshTokenEndpoint extends Endpoint {
     }
 
     public refresh(refreshToken: string): Observable<any> {
-        console.log('posting');
-        return this.request('post', {
-            client_id    : this.config.clientId,
+        return this.request('get', {
+            client_id: this.config.clientId,
             client_secret: this.config.clientSecret,
-            grant_type   : 'refresh_token',
+            grant_type: 'refresh_token',
             refresh_token: refreshToken
         });
     }
