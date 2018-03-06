@@ -27,7 +27,7 @@ import {NgCoreModule}                  from "@ng-app-framework/core";
 })
 export class NgOAuthModule {
 
-    constructor(oauth: OAuthToken) {
+    constructor(oauth: OAuthToken, refreshAccessToken: RefreshTokenEndpoint) {
     }
 
     static forRoot(clientId: string, clientSecret: string): ModuleWithProviders {
