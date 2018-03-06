@@ -1,14 +1,28 @@
-import {Injectable} from "@angular/core";
-import {Observable} from "rxjs/Rx";
-import {AsynchronousDefinition, Name, ObjectValidator, StringValidator} from "@ng-app-framework/validation";
-import {Endpoint, EndpointCaller, EndpointValidator} from "@ng-app-framework/api";
-import {OAuthConfig} from "../Service/OAuthConfig";
+import {Injectable}                                                         from "@angular/core";
+import {Observable}                                                         from "rxjs/Rx";
+import {AsynchronousDefinition, Name, ObjectValidator, StringValidator}     from "@ng-app-framework/validation";
+import {Endpoint, EndpointCaller, EndpointValidator, EndpointDocumentation} from "@ng-app-framework/api";
+import {OAuthConfig}                                                        from "../Service/OAuthConfig";
 
 @Name('RefreshTokenEndpoint')
 @Injectable()
 export class RefreshTokenEndpoint extends Endpoint {
 
     public path: string = 'api/oauth/v2/token';
+
+    documentation: EndpointDocumentation[] = [
+        {
+            method   : 'get',
+            name     : 'refresh',
+            arguments: [
+                {
+                    name    : 'refreshToken',
+                    type    : 'string',
+                    required: true
+                }
+            ]
+        }
+    ];
 
     validator: EndpointValidator = new EndpointValidator(
         new AsynchronousDefinition(new ObjectValidator('Refresh Token Request', {
@@ -27,9 +41,9 @@ export class RefreshTokenEndpoint extends Endpoint {
 
     public refresh(refreshToken: string): Observable<any> {
         return this.request('get', {
-            client_id: this.config.clientId,
+            client_id    : this.config.clientId,
             client_secret: this.config.clientSecret,
-            grant_type: 'refresh_token',
+            grant_type   : 'refresh_token',
             refresh_token: refreshToken
         });
     }
