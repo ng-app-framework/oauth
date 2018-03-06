@@ -8,6 +8,7 @@ import {OAuthConfig}                                                        from
 @Injectable()
 export class RefreshTokenEndpoint extends Endpoint {
 
+    module              = 'OAuth';
     public path: string = 'api/oauth/v2/token';
 
     documentation: EndpointDocumentation[] = [
@@ -20,7 +21,17 @@ export class RefreshTokenEndpoint extends Endpoint {
                     type    : 'string',
                     required: true
                 }
-            ]
+            ],
+            request: {
+                client_id    : "string",
+                client_secret: "string",
+                grant_type   : "'refresh-token'",
+                refresh_token: "string"
+            },
+            response: {
+                access_token: "string",
+                refresh_token: "string"
+            }
         }
     ];
 
