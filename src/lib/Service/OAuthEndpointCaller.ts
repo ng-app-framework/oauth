@@ -64,7 +64,7 @@ export class OAuthEndpointCaller extends EndpointCaller {
     }
 
     protected getUrlWithAccessToken(method: string, absoluteUrl: string) {
-        if (method === 'get') {
+        if (method === 'get' || method === 'delete') {
             return absoluteUrl;
         }
         return absoluteUrl + '?access_token=' + this.oauth.state.accessToken;
